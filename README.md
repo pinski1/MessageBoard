@@ -24,7 +24,7 @@ The hardest part of the project was ensuring that the LED dot matrix displays we
 
 * 1x ethernet cable
 
-
+![Ethernet cable](./Hardware/ethernet cable.png)
 
 * 1x set of passive Power Over Ethernet (POE) splitter cables
 
@@ -32,17 +32,19 @@ The hardest part of the project was ensuring that the LED dot matrix displays we
 
 * 1x Car USB adaptor
 
-
+![Modified car phone charger](./Hardware/5V adaptor.png)
 
 * 1x RPi & power to LED Display cable
 
-
+![custom cable]()
 
 * 4x Sure Electronics 8x32 LED Displays
 
 ![LED dot matrix displays](./Hardware/LED Dot Matrix.png)
 
 * 1x 220uF 16V electrolytic capacitor
+
+![Capacitor]()
 
 ####Making the Custom Cable
 * 18x female crimps
