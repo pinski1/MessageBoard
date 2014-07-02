@@ -22,11 +22,14 @@ worst part was the display initialising being different for different models of 
 ####Get the Parts
 * 1x Raspberry Pi B
 * 1x 20cm USB micro cable
+![USB Cable](./Hardware/20cm micro usb.png)
 * 1x ethernet cable
 * 1x set of passive Power Over Ethernet (POE) splitter cables
+![Ethernet POE splitter](./Hardware/passive POE splitter.png)
 * 1x Car USB adaptor
 * 1x RPi & power to LED Display cable
 * 4x Sure Electronics 8x32 LED Displays
+![LED dot matrix displays](./Hardware/LED Dot Matrix.png)
 
 ####Making the Custom Cable
 * 20x female crimps
@@ -71,7 +74,11 @@ cd ~/MessageBoard
 ```
 Assuming everything is connected properly you should now see the time & date scrolling across the message board.
 
-<!--- boot script instructions -->
+As the message board is likely to be the only display connected to your Raspberry Pi it would be helpful to have that display the IP on boot up. I too the instructions from Jim Schrempp and can be found [here](http://www.jimschrempp.com/features/computer/rpi_boot_email.htm).
+```bash
+sudo cp /Scripts/boot_disp_ip.sh /etc/init.d
+sudo update-rc.d boot_disp_ip.sh defaults
+```
 
 <!--- need to add python script stuff -->
 

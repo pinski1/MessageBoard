@@ -7,12 +7,12 @@
 # Short-Description:    Display the ip address on screen
 # Description:		display the ip address on screen
 ### END INIT INFO
-# Author: Robert Karpinski
+# Author: Pinski1
 #
 # If you modify this, please add your contact info
 #
 #
-#  Send email of ip address upon boot up
+#  Displays ip address upon boot up
 #
 
 #! /bin/bash
