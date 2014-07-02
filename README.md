@@ -1,6 +1,7 @@
 
 
 <!-- add image of completed display -->
+<!-- 1[]() -->
 
 <!-- introduction text -->
 
@@ -14,6 +15,7 @@
 3. run script to compile C programs
 4. run script to set python script to auto run
 
+<!--
 ####Files
 * HT1632_driver.c - the display driver
 * HT1632.c - display driver functions
@@ -23,15 +25,13 @@
 <!--* idle.txt - idle text-->
 * compile.sh - script to compile c program
 * install.sh - script to install Git, wiringPi and display driver
+-->
 
 ###Hardware
 
-<!-- add diagram of connections -->
-
-####Parts
 * 1x RPi & power to LED Display cable
- * <!-- add diagram of RPi to LED Display cable -->
- * <!-- image -->
+ * <!-- add diagram of RPi to LED Display cable --> 
+![Image](./Hardware/DisplayBoardCable.png?raw=true)
 * 4x Sure Electronics 8x32 LED Displays
  * <!-- link -->
  * <!-- image -->
@@ -49,9 +49,9 @@
 
 ##License Information
 
-LED Display hardware is closed sourced.
+The LED Dot-Matrix Displays are closed source.
 
-wiringPi is open sourced to ....
+wiringPi is released under [GNU LGPLv3](http://www.gnu.org/copyleft/lesser.html)
 
 The C code is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
 
