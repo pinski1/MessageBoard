@@ -15,13 +15,14 @@
 4. run script to set python script to auto run
 
 ####Files
-HT1632_driver.c - display driver functions
-HT1632_driver.h - display driver functions
-fonts.h - display driver fonts
-display_board.py - display python script that constantly runs
-idle.txt - idle text
-// script to compile c
-// script to install python
+* HT1632_driver.c - the display driver
+* HT1632.c - display driver functions
+* HT1632.h - display driver functions
+* fonts.h - display driver fonts
+<!--* display_board.py - display python script that constantly runs-->
+<!--* idle.txt - idle text-->
+* compile.sh - script to compile c program
+* install.sh - script to install Git, wiringPi and display driver
 
 ###Hardware
 
@@ -49,8 +50,11 @@ idle.txt - idle text
 ##License Information
 
 LED Display hardware is closed sourced.
+
 wiringPi is open sourced to ....
-The C code is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).  
-The cable is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).  
+
+The C code is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
+
+The cable is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
 
 
