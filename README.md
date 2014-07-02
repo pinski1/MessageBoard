@@ -1,64 +1,91 @@
+#Message Board
 
+![Message Board active](./Hardware/Message Board.png)
 
-<!-- add image of completed display -->
-<!-- 1[]() -->
+This project was inspired by London Hackspace's [Notification Board](https://wiki.london.hackspace.org.uk/view/Project:Notification_Board) but with modifications to suit the Cambridge [Makespace](http://makespace.org/).
 
-<!-- introduction text
+The primary modification was to remove the need for separate computer , this was done by replacing the Arduino with an ethernet shield with a Raspberry Pi. Whilst it probably wasn't the most efficient use of computing power I had a Raspberry Pi free and I wanted to use it for a worthwhile project. In addition it's spare power could be used to increase the functionality of the message board by having scripts running 24/7 to display useful informaition about local food, transport and weather as well as displaying current and future events.
 
+The hardest part of the project was ensuring that the LED dot matrix displays were correctly initialised as the same part number has 2 varients requiring different initialisation sequences.
 
-influenced by London Hackspace message board
-  don't have the same network inastructure, no 24/7 servers/PCs
-  Raspberry Pi available and I'd not used one
-  It was capable of running everything with plenty of power left over for smarts
-  
-worst part was the display initialising being different for different models of the same display
+##Setting up the Message Board
+###The Hardware
 
--->
-
-##Setup
-
-###Hardware
+![Message Board v0.2](./Hardware/Message Board detached.png)
 
 ####Get the Parts
 * 1x Raspberry Pi B
+
+![Raspberry Pi](./Hardware/Raspberry Pi.png)
+
 * 1x 20cm USB micro cable
+
 ![USB Cable](./Hardware/20cm micro usb.png)
+
 * 1x ethernet cable
+
+
+
 * 1x set of passive Power Over Ethernet (POE) splitter cables
+
 ![Ethernet POE splitter](./Hardware/passive POE splitter.png)
+
 * 1x Car USB adaptor
+
+
+
 * 1x RPi & power to LED Display cable
+
+
+
 * 4x Sure Electronics 8x32 LED Displays
+
 ![LED dot matrix displays](./Hardware/LED Dot Matrix.png)
 
-####Making the Custom Cable
-* 20x female crimps
-* 1x 2x13 way female socket
-* 1x 2x? way female socket
-* 1x 150mm SWG30-SWG26 multicore red wire
-* 2x 150mm SWG30-SWG26 multicore black wire
-* 1x 150mm SWG30-SWG26 multicore green wire
-* 1x 150mm SWG30-SWG26 multicore yellow wire
-* 1x 150mm SWG30-SWG26 multicore blue wire
-* 1x 150mm SWG30-SWG26 multicore purple wire
-* 1x 150mm SWG30-SWG26 multicore white wire
+* 1x 220uF 16V electrolytic capacitor
 
-<!---
+####Making the Custom Cable
+* 18x female crimps
+* 1x 2x13 way female socket
+* 1x 2x8 way female socket
+* 1x 150mm SWG30 multicore red wire
+* 2x 150mm SWG30 multicore black wire
+* 1x 150mm SWG30 multicore green wire
+* 1x 150mm SWG30 multicore yellow wire
+* 1x 150mm SWG30 multicore blue wire
+* 1x 150mm SWG30 multicore purple wire
+* 1x 150mm SWG30 multicore white wire
+* 1x 150mm SWG30 multicore orange wire
+
 1. Strip ~ 2mm from each end of every cable
 2. Crimp each end with a female crimp
-3. Insert the following cables into the 2x13 socket
- * A free black wire into
- * A free green wire into
- * A free yellow wire into
- * A free blue wire into
- * A free purple wire into
- * white wire into
-4. insert the ?
-5. insert the ?
--->
+3. Insert the following wires into the 2x13 socket
+ * A black wire into pin 25
+ * The green wire into pin 19
+ * The yellow wire into pin 23
+ * The blue wire into pin 24
+ * The purple wire into pin 26
+ * The white wire into pin 18
+ * The orange wire into pin 22
+4. Insert the following wires into the 2x8 socket
+ * The free red wire into pin 16
+ * The free black wire into pin 15
+ * The black wire into pin 8
+ * The green wire into pin 7
+ * The yellow wire into pin 5
+ * The blue wire into pin 3
+ * The purple wire into pin 1
+ * The white wire into pin 2
+ * The orange wire into pin 4
+5. Insert the following wires into 1x1 sockets
+ * The remaining red wire
+ * The remaining black wire
+6. Optionally use spiral wrap or heatshink and braiding to keep the loose wires together.
 
 ####Connecting it all Together
-![Image](./Hardware/DisplayBoardCable.png?raw=true)
+Connect the parts as shown in the image below:
+
+![Image](./Hardware/Message Board connections.png)
 
 ###Software
 Type/copy the following lines into your Raspberry Pi's terminal:
@@ -74,13 +101,13 @@ cd ~/MessageBoard
 ```
 Assuming everything is connected properly you should now see the time & date scrolling across the message board.
 
-As the message board is likely to be the only display connected to your Raspberry Pi it would be helpful to have that display the IP on boot up. I too the instructions from Jim Schrempp and can be found [here](http://www.jimschrempp.com/features/computer/rpi_boot_email.htm).
+As the message board is likely to be the only display connected to your Raspberry Pi it would be helpful to have that display the IP on boot up. I took the instructions from Jim Schrempp which can be found [here](http://www.jimschrempp.com/features/computer/rpi_boot_email.htm) and modified them to suit.
 ```bash
 sudo cp /Scripts/boot_disp_ip.sh /etc/init.d
 sudo update-rc.d boot_disp_ip.sh defaults
 ```
 
-<!--- need to add python script stuff -->
+Later revisions of this project will have a python script which can run though scripts to allow for a display that auto-updates with useful information.
 
 ##License Information
 
@@ -91,5 +118,4 @@ wiringPi is released under [GNU LGPLv3](http://www.gnu.org/copyleft/lesser.html)
 The C code is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
 
 The cable is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
-
 
