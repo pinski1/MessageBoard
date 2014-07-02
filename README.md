@@ -3,7 +3,17 @@
 <!-- add image of completed display -->
 <!-- 1[]() -->
 
-<!-- introduction text -->
+<!-- introduction text
+
+
+influenced by London Hackspace message board
+  don't have the same network inastructure, no 24/7 servers/PCs
+  Raspberry Pi available and I'd not used one
+  It was capable of running everything with plenty of power left over for smarts
+  
+worst part was the display initialising being different for different models of the same display
+
+-->
 
 ##Setup
 
@@ -30,6 +40,7 @@
 * 1x 150mm SWG30-SWG26 multicore purple wire
 * 1x 150mm SWG30-SWG26 multicore white wire
 
+<!---
 1. Strip ~ 2mm from each end of every cable
 2. Crimp each end with a female crimp
 3. Insert the following cables into the 2x13 socket
@@ -41,6 +52,7 @@
  * white wire into
 4. insert the ?
 5. insert the ?
+-->
 
 ####Connecting it all Together
 ![Image](./Hardware/DisplayBoardCable.png?raw=true)
@@ -57,6 +69,10 @@ cd wiringPi
 cd ~/MessageBoard
 ./compile.sh
 ```
+Assuming everything is connected properly you should now see the time & date scrolling across the message board.
+
+<!--- boot script instructions -->
+
 <!--- need to add python script stuff -->
 
 ##License Information
