@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "font.h"
 #include <string.h>
-#include <wiringPi.h>
-#include <wiringPiSPI.h>
+//#include <wiringPi.h>
+//#include <wiringPiSPI.h>
 #include "HT1632.h"
 
 /**
