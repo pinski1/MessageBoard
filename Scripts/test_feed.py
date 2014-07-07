@@ -1,18 +1,24 @@
 import os
-import feedparser
+import json
+import urllib2
 
-meetup_feed = feedparser.parse('http://www.meetup.com/Makespace/events/rss/')
+# using the Meetup API get the JSON file of the next event
 
-buffer_name = meetup_feed.entries[0].title
-buffer_desc = meetup_feed.entries[0].description
+url = "http://api.meetup.com/2/events?status=upcoming&order=time&limited_events=False&group_urlname=Makespace&desc=false&offset=0&photo-host=public&format=json&page=2&fields=&sig_id=128594992&sig=32c1fc602f75189fdc9119b7dc457f3f315a6f3f"
 
-position_date_end = buffer_desc.rfind('M</p>') + 1
-position_date_begin = buffer_desc.rfind('<p>',0,position_date_end) + 3
+try:
+  data = json.load(urllib2.urlopen(url))
 
-buffer_date = buffer_desc[position_date_begin:position_date_end]
+  print json.dumps(data, sort_keys=True, indent=2)
 
-buffer = """The next event is """ + buffer_name + """ on """ + buffer_date + """."""
+except (ValueError, KeyError, TypeError):
+    print "JSON format error"
 
-#print buffer
-os.system("""sudo write_disp -s 75 -m '""" + buffer + """'""")
+
+  
+
+#buffer = """The next event is """ + buffer_name + """ on """ + buffer_date + """."""
+
+#print data
+#os.system("""sudo write_disp -s 75 -m '""" + buffer + """'""")
 
