@@ -15,3 +15,5 @@ Be excellent to each other.
 Warning! Raspberry Pi users operate in this area.
 Leave this space tidier than you found it.
 Do not be on fire.
+Hack all the things, except safety devices.
+If something is broken fix it!
