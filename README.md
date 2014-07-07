@@ -111,6 +111,15 @@ sudo update-rc.d boot_disp_ip.sh defaults
 
 Later revisions of this project will have a python script which can run though scripts to allow for a display that auto-updates with useful information.
 
+<!---
+```bash
+cd ~/MessageBoard/Scripts
+git clone https://code.google.com/p/feedparser/
+cd feedparser
+sudo python setup.py install
+```
+-->
+
 Messages can be sent to the board in the following format: `sudo write_disp -s 75 -m "Hello World"` The '-s 75' is option and sets a number of milliseconds to wait between each vertical line, 50-75 is an ideal speed, 0 milliseconds freezes the text on the display and anything larger than 5000 generates an error. The essage is preceded by '-m' and can be anything e.g. `-m "`date`"` will print a formatted string of the time and date.
 
 ##License Information
