@@ -1,6 +1,7 @@
 import os
 import json
 import urllib2
+import datetime
 
 # using the Meetup API get the JSON file of the next event
 
@@ -9,16 +10,13 @@ url = "http://api.meetup.com/2/events?status=upcoming&order=time&limited_events=
 try:
   data = json.load(urllib2.urlopen(url))
 
-  print json.dumps(data, sort_keys=True, indent=2)
+  #print json.dumps(data, sort_keys=True, indent=2)
 
 except (ValueError, KeyError, TypeError):
     print "JSON format error"
 
 
-  
+buffer = """The next event is """ + data['results'][0]['name'] + """ on """ + datetime.datetime.fromtimestamp(int(data['results'][0]['time'])/1000).strftime('%A %d %B at %I:%M %p') + """."""
 
-#buffer = """The next event is """ + buffer_name + """ on """ + buffer_date + """."""
-
-#print data
-#os.system("""sudo write_disp -s 75 -m '""" + buffer + """'""")
-
+print buffer
+os.system("""sudo write_disp -s 75 -m '""" + buffer + """'""")
