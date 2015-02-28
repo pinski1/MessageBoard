@@ -34,3 +34,7 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# special files
+.txt
+script_TwitterUsername.py
